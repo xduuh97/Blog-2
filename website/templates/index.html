@@ -18,9 +18,12 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<h1><strong>I am Strata, a super simple<br />
-					responsive site template freebie<br />
-					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1></strong>
+					<h1><strong>Bem-aventurado o homem que acha sabedoria, e o homem que adquire conhecimento;
+						Porque é melhor a sua mercadoria do que artigos de prata, e maior o seu lucro que o ouro mais fino.</strong>
+						<q>
+							Provérbios 3:13-14
+						</q>
+					</h1>
 				</div>
 			</header>
 
@@ -50,7 +53,7 @@
 								{% else %}
 									<!-- ADCIONAR IMAGEM PARA NÃO FICAR VAZIO-->
 								{% endif %}
-								<h3>{{ post.titulo }}</h3>
+								<h3>{{ post.titulo|safe }}</h3>
 								<p>{{ post.sub_titulo }}</p>
 								<span>{{ post.get_categoty_label }}</span>
 								<ul class="actions">
@@ -70,16 +73,15 @@
 						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								<form method="post" action="{% url 'save_form' %}">
+									{% csrf_token %}
 									<div class="row gtr-uniform gtr-50">
 										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Nome" /></div>
 										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
 										<div class="col-12"><textarea name="message" id="message" placeholder="Mensagem" rows="4"></textarea></div>
 									</div>
+									<input type="submit" value="Deixe sua mensagem" />
 								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Deixe sua mensagem" /></li>
-								</ul>
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
@@ -111,7 +113,7 @@
 						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; AD Vale Virtudes Trianon 2020</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; 2020  AD Vale Virtudes Trianon</li><li>Developer: Ed Jesus</a></li>
 					</ul>
 				</div>
 			</footer>

@@ -28,25 +28,9 @@
 			<div id="main">
 
 				<!-- One -->
-					<section id="two">
-						<header class="major">
-                            <h2>{{post.titulo|safe}}</h2>
-                            <h4>{{post.sub_titulo}}</h4>
-						</header>
-                        <p>{{post.conteudo|safe}}</p>
-								{% if post.imagem %}
-								<div class="row">
-								<article class="col-6 col-12-xsmall work-item">
-								<a href="{{ post.imagem.url }}" alt="{{post.titulo}}" class="image fit thumb">
-									<img src="{{ post.imagem.url }}" alt="{{post.titulo}}" width="250px" height="300px"/></a>	
-								</article>
-								</div>
-								{% else %}
-									<!-- ADCIONAR IMAGEM PARA NÃO FICAR VAZIO-->
-								{% endif %}
-						<ul class="actions">
-							<li><a href="{% url 'home_blog' %}" class="button">Voltar</a></li>
-						</ul>
+					<section id="one">
+                        <h1>Obrigado {{name_contato}}. <br> AD Vale Virtudes Trianon agradece pelo seu contato.</h1>
+                        <a href="/">Voltar para a pagina inicial.</a>
 					</section>
 			</div>
 		<!-- Footer -->

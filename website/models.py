@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -9,10 +11,20 @@ class Categorias(models.TextChoices):
     CR = 'CR', 'Curiosidades'
     PB = 'PB', 'Passagens Bíblicas'
 
+class Contato(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+
 class Post(models.Model):
-    titulo = models.CharField(max_length=100)
+    titulo = RichTextField()
     sub_titulo = models.CharField(max_length=200)
-    conteudo = models.TextField()
+    conteudo = RichTextUploadingField()
     categorias = models.CharField(
         max_length=4,
         choices=Categorias.choices,
